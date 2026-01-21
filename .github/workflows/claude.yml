@@ -47,6 +47,13 @@ jobs:
           additional_permissions: |
             actions: read
 
+          prompt: >
+            ${{ github.event.comment.body }}
+            
+            IMPORTANT: After you have implemented the changes and tested them, 
+            you MUST run 'gh pr create --fill' to submit the PR. 
+            Do not just provide a link.
+            
           # Optional: Give a custom prompt to Claude. If this is not specified, Claude will perform the instructions specified in the comment that tagged it.
           # prompt: 'Update the pull request description to include a summary of changes.'
 
