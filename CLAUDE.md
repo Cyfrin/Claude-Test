@@ -2,10 +2,13 @@
 
 ## Issue Management & Workflow
 
-1.  **Analyze**: Read the issue.
-2.  **Plan**: Post a comment on the issue with a checklist of tasks you are about to perform.
+1.  **Analyze**: Read the issue to understand requirements.
+2.  **Plan & Notify**: Run `gh issue comment create --body "..."` to post your initial checklist. 
+    *   **CRITICAL:** Capture the URL/ID of this comment from the output. You will need it later.
 3.  **Branch**: Create a new branch.
-4.  **Implement**: Write the code.
-5.  **Verify**: Run tests if available.
-6.  **PR**: Run `gh pr create --fill` to submit the PR.
-7.  **Report**: Post a final comment on the issue saying "Task completed. PR created here: [Link]" and check off your initial task list.
+4.  **Implement**: Write the code and tests.
+5.  **PR**: Run `gh pr create --fill` to submit the PR.
+6.  **Update Status**: Do NOT create a new comment. 
+    *   Use the command `gh issue comment edit <comment-url> --body "..."`
+    *   Update your **original comment** to check off the boxes.
+    *   Add the link to the PR at the bottom of that same comment.
